@@ -10,7 +10,7 @@ defaults[projects][subdir] = contrib
 projects[dkan_dataset][subdir] = dkan
 projects[dkan_dataset][download][type] = git
 projects[dkan_dataset][download][url] = https://github.com/NuCivic/dkan_dataset.git
-projects[dkan_dataset][download][tag] = 7.x-1.9
+projects[dkan_dataset][download][branch] = 7x-1-9-upgrade-test
 
 projects[dkan_datastore][subdir] = dkan
 projects[dkan_datastore][download][type] = git
@@ -34,8 +34,8 @@ projects[visualization_entity_charts][type] = module
 includes[dkan_dataset_make] = https://raw.githubusercontent.com/NuCivic/dkan_dataset/7.x-1.9/dkan_dataset.make
 includes[dkan_datastore_make] = https://raw.githubusercontent.com/NuCivic/dkan_datastore/7.x-1.9/dkan_datastore.make
 
-includes[visualization_entity_make] = https://raw.githubusercontent.com/NuCivic/visualization_entity/master/visualization_entity.make
-includes[visualization_entity_charts_make] = https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/master/visualization_entity_charts.make
+includes[visualization_entity_make] = https://raw.githubusercontent.com/NuCivic/visualization_entity/14f01aba3a3f55a34cd2268d4f46d42792bec019/visualization_entity.make
+includes[visualization_entity_charts_make] = https://raw.githubusercontent.com/NuCivic/visualization_entity_charts/902393db995dd5c7e8a75b6945e3066ab7112a5f/visualization_entity_charts.make
 
 includes[dkan_data_story_make] = modules/dkan/dkan_data_story/dkan_data_story.make
 
