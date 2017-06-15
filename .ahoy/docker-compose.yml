@@ -8,7 +8,7 @@ web:
   environment:
     - VIRTUAL_HOST=dkan.docker
     #- VIRTUAL_PROTO=https
-  ports:
+  expose:
     - "80"
     - "443"
   volumes:
@@ -96,16 +96,21 @@ browser:
     - /dev/shm:/dev/shm
     # Project root folder mapping
     - *project_root
-  links:
-    - web
-  ports:
-  #  - "4444:4444"
+
+    # @todo linking web is crashing on Docker for Mac
+#  links:
+#    - web
+  expose:
     - "5900"
+
+  # Fix for docker for mac container not starting
+  environment:
+    - no_proxy=''
 
 solr:
   hostname: solr
   image: devinci/drupal-solr:3.x
-  #ports:
-  #  - "8983:8983"
+  expose:
+    - "8983"
   volumes:
     - "./.docker/etc/solr/3.x:/var/lib/solr/conf"
