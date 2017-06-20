@@ -41,9 +41,9 @@ db:
      # MySQL configuration overrides
      - "./.docker/etc/mysql/my.cnf:/etc/mysql/conf.d/z_my.cnf"
      # Permanent DB data storage
-     - /var/lib/mysql
+     # - /var/lib/mysql
      # Project root folder mapping
-     - *project_root
+     # - *project_root
 
 # CLI node
 # Used for all console commands and tools.
@@ -99,7 +99,7 @@ browser:
   volumes:
     - /dev/shm:/dev/shm
     # Project root folder mapping
-    - *project_root
+    # - *project_root
 
   links:
     - web
