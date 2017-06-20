@@ -1,0 +1,9 @@
+version: "2"
+
+options:
+  #Disable, has performance implications.
+  verbose: true
+syncs:
+  native-sync:
+    src: '.'
+    sync_excludes: ['.idea', '.git']

@@ -188,9 +188,19 @@ commands:
     import: dkan/.ahoy/theme.ahoy.yml
     hide: true
 
-  # Moved to .ahoy.yml
   uli:
-    usage: Log in via drush
+    usage: Log in via drush with ahoy
     cmd: |
-      ahoy uli
+      if [ "$AHOY_CMD_PROXY" = "DOCKER" ]; then
+        url=$(ahoy drush uli --uri="$(ahoy docker url)" {{args}})
+      else
+        url=$(ahoy drush uli {{args}})
+      fi
+      os=$(uname)
+
+      if [ "$os" = "Darwin" ]; then
+        open $url
+      else
+        echo $url
+      fi
 

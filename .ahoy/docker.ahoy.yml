@@ -98,6 +98,9 @@ commands:
         docker rm dkan_proxy
       fi
     usage: Destroy all the docker compose containers. (use before deleting folder)
+  docker-sync:
+    cmd: |
+      docker-sync {{args}} --config=./dkan/.ahoy/docker-sync.yml
   exec:
     cmd: |
       all_args=$(echo "{{args}}")
